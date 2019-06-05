@@ -1,0 +1,9 @@
+# Executive Summary
+
+Reddit is a gathering space for individuals of all backgrounds and interests.  These interests are organized by "subreddit" and allow for a collection of posts, conversations, and comments on or related to the main topic of the subreddit.  I chose to examine posts from /r/Creation and /r/Evolution to build a classifier that may distinguish between the two.
+
+NLP is a powerful tool that allows us to turn text, vocabulary, and conversation into data.  This data can then be used to find relationships, identify key terms, create predictive models, and so much more.  As a Data Scientist, NLP represents an incredible opportunity for insight and modeling and can be used to simplify previously daunting tasks.
+
+In this project, I use Reddit's API to scrape data from two subreddits, r/Evolution and r/Creation.  My goal is to build a model which may accurately and effectively predict and categorize post titles by subreddit.  Using NLP techniques, I vectorized post titles from both subreddits, and I then used classification models to create a predictive model for the post titles.
+
+The two subreddits ended up being far more similar than I previously believed.  Many of the most common or indicative terms were found in similarly high amounts in both subreddits.  My inference is that while the terms may be the same or similar, the context of those terms may be the important defining aspect.  With CountVectorizer and TF-IDF, all words are considered independent of one another and thus context is ignored completely.  A vectorizer capable of incorporating context would likely result in a significantly better model.  However, even with this limitation, the Multinomial Naive Bayes model was able to predict with 78% accuracy on the testing set, which is a significant improvement over the baseline accuracy of 50.5%.
